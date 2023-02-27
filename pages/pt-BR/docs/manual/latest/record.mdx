@@ -1,7 +1,7 @@
 ---
 title: "Record"
 description: "Record types in ReScript"
-canonical: "/docs/manual/latest/record"
+canonical: "/pt-BR/docs/manual/latest/record"
 ---
 
 # Record
@@ -428,7 +428,7 @@ getAge(me) // type error!
 The type system will complain that `me` is a `person`, and that `getAge` only works on `monster`. If you need such capability, use ReScript objects, described [here](object.md).
 
 ### Optional Fields in Records Can Be Useful for Bindings
-Many JavaScript APIs tend to have large configuration objects that can be a bit annoying to model as records, since you previously always needed to specify all record fields when creating a record. 
+Many JavaScript APIs tend to have large configuration objects that can be a bit annoying to model as records, since you previously always needed to specify all record fields when creating a record.
 
 Optional record fields, introduced in [`v10`](/blog/release-10-0-0#experimental-optional-record-fields), is intended to help with this. Optional fields will let you avoid having to specify all fields, and let you just specify the one's you care about. A significant improvement in ergonomics for bindings and other APIs with for example large configuration objects.
 

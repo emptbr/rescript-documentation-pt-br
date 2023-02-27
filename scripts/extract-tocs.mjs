@@ -139,17 +139,26 @@ const createTOC = (result) => {
 
 const createLatestManualToc = (lang) => {
   let MD_DIR = path.join(__dirname, "../pages/docs/manual/latest");
-  if (lang) {
-    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/manual/latest`);
-  }
-  const SIDEBAR_JSON = path.join(
+  let SIDEBAR_JSON = path.join(
     __dirname,
     "../data/sidebar_manual_latest.json"
   );
-  const TARGET_FILE = path.join(
+  let TARGET_FILE = path.join(
     __dirname,
     "../index_data/manual_latest_toc.json"
   );
+
+  if (lang) {
+    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/manual/latest`);
+    SIDEBAR_JSON = path.join(
+      __dirname,
+      `../data/${lang}/sidebar_manual_latest.json`
+    );
+    TARGET_FILE = path.join(
+      __dirname,
+      `../index_data/${lang}/manual_latest_toc.json`
+    );
+  }
 
   const sidebarJson = JSON.parse(fs.readFileSync(SIDEBAR_JSON));
 
@@ -168,18 +177,22 @@ const createLatestManualToc = (lang) => {
 
 const createReasonCompilerToc = (lang) => {
   let MD_DIR = path.join(__dirname, "../pages/docs/reason-compiler/latest");
+  let TARGET_FILE = path.join(
+    __dirname,
+    "../index_data/reason_compiler_toc.json"
+  );
 
   if (lang) {
     MD_DIR = path.join(
       __dirname,
       `../pages/${lang}/docs/reason-compiler/latest`
     );
+    TARGET_FILE = path.join(
+      __dirname,
+      `../index_data/${lang}/reason_compiler_toc.json`
+    );
   }
 
-  const TARGET_FILE = path.join(
-    __dirname,
-    "../index_data/reason_compiler_toc.json"
-  );
 
   const files = glob.sync(`${MD_DIR}/*.md?(x)`);
   const result = files.map(processFile);
@@ -190,15 +203,20 @@ const createReasonCompilerToc = (lang) => {
 
 const createV900ManualToc = (lang) => {
   let MD_DIR = path.join(__dirname, "../pages/docs/manual/v9.0.0");
-
-  if (lang) {
-    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/manual/v9.0.0`);
-  }
-  const SIDEBAR_JSON = path.join(__dirname, "../data/sidebar_manual_v900.json");
-  const TARGET_FILE = path.join(
+  let SIDEBAR_JSON = path.join(__dirname, "../data/sidebar_manual_v900.json");
+  let TARGET_FILE = path.join(
     __dirname,
     "../index_data/manual_v900_toc.json"
   );
+
+  if (lang) {
+    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/manual/v9.0.0`);
+    SIDEBAR_JSON = path.join(__dirname, `../data/${lang}/sidebar_manual_v900.json`);
+    TARGET_FILE = path.join(
+      __dirname,
+      `../index_data/${lang}/manual_v900_toc.json`
+    );
+  }
 
   const sidebarJson = JSON.parse(fs.readFileSync(SIDEBAR_JSON));
 
@@ -217,14 +235,20 @@ const createV900ManualToc = (lang) => {
 
 const createV800ManualToc = (lang) => {
   let MD_DIR = path.join(__dirname, "../pages/docs/manual/v8.0.0");
-  if (lang) {
-    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/manual/v8.0.0`);
-  }
-  const SIDEBAR_JSON = path.join(__dirname, "../data/sidebar_manual_v800.json");
-  const TARGET_FILE = path.join(
+  let SIDEBAR_JSON = path.join(__dirname, "../data/sidebar_manual_v800.json");
+  let TARGET_FILE = path.join(
     __dirname,
     "../index_data/manual_v800_toc.json"
   );
+
+  if (lang) {
+    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/manual/v8.0.0`);
+    SIDEBAR_JSON = path.join(__dirname, `../data/${lang}/sidebar_manual_v800.json`);
+    TARGET_FILE = path.join(
+      __dirname,
+      `../index_data/${lang}/manual_v800_toc.json`
+    );
+  }
 
   const sidebarJson = JSON.parse(fs.readFileSync(SIDEBAR_JSON));
 
@@ -244,18 +268,26 @@ const createV800ManualToc = (lang) => {
 const createReactToc = (version, lang) => {
   const versionLabel = version.replace(/\./g, "");
   let MD_DIR = path.join(__dirname, "../pages/docs/react");
-
-  if (lang) {
-    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/react`);
-  }
-  const SIDEBAR_JSON = path.join(
+  let SIDEBAR_JSON = path.join(
     __dirname,
     `../data/sidebar_react_${versionLabel}.json`
   );
-  const TARGET_FILE = path.join(
+  let TARGET_FILE = path.join(
     __dirname,
     `../index_data/react_${versionLabel}_toc.json`
   );
+
+  if (lang) {
+    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/react`);
+    SIDEBAR_JSON = path.join(
+      __dirname,
+      `../data/${lang}/sidebar_react_${versionLabel}.json`
+    );
+    TARGET_FILE = path.join(
+      __dirname,
+      `../index_data/${lang}/react_${versionLabel}_toc.json`
+    );
+  }
 
   const sidebarJson = JSON.parse(fs.readFileSync(SIDEBAR_JSON));
 
@@ -274,17 +306,26 @@ const createReactToc = (version, lang) => {
 
 const createGenTypeToc = (lang) => {
   let MD_DIR = path.join(__dirname, "../pages/docs/gentype/latest");
-  if (lang) {
-    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/gentype/latest`);
-  }
-  const SIDEBAR_JSON = path.join(
+  let SIDEBAR_JSON = path.join(
     __dirname,
     "../data/sidebar_gentype_latest.json"
   );
-  const TARGET_FILE = path.join(
+  let TARGET_FILE = path.join(
     __dirname,
     "../index_data/gentype_latest_toc.json"
   );
+
+  if (lang) {
+    MD_DIR = path.join(__dirname, `../pages/${lang}/docs/gentype/latest`);
+    SIDEBAR_JSON = path.join(
+      __dirname,
+      `../data/${lang}/sidebar_gentype_latest.json`
+    );
+    TARGET_FILE = path.join(
+      __dirname,
+      `../index_data/${lang}/gentype_latest_toc.json`
+    );
+  }
 
   const sidebarJson = JSON.parse(fs.readFileSync(SIDEBAR_JSON));
 
@@ -304,11 +345,14 @@ const createGenTypeToc = (lang) => {
 
 const createCommunityToc = (lang) => {
   let MD_DIR = path.join(__dirname, "../pages/community");
+  let SIDEBAR_JSON = path.join(__dirname, "../data/sidebar_community.json");
+  let TARGET_FILE = path.join(__dirname, "../index_data/community_toc.json");
+
   if (lang) {
     MD_DIR = path.join(__dirname, `../pages/${lang}/community`);
+    SIDEBAR_JSON = path.join(__dirname, `../data/${lang}/sidebar_community.json`);
+    TARGET_FILE = path.join(__dirname, `../index_data/${lang}/community_toc.json`);
   }
-  const SIDEBAR_JSON = path.join(__dirname, "../data/sidebar_community.json");
-  const TARGET_FILE = path.join(__dirname, "../index_data/community_toc.json");
 
   const sidebarJson = JSON.parse(fs.readFileSync(SIDEBAR_JSON));
 
@@ -354,15 +398,18 @@ function Run(lang) {
 }
 
 function GenerateDocs() {
+  console.log('GERANDO DOCS')
   const languages = ["en", "pt-BR"];
 
   for (let language of languages) {
+    console.log('DOC EM: ', language)
     if (language === "en") {
       Run();
-      continue;
+      console.log(`DOC EM: ${language}`, 'DONE')
+    } else {
+      Run(language);
+      console.log(`DOC EM: ${language}`, 'DONE')
     }
-
-    Run(language);
   }
 }
 

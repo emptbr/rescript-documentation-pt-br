@@ -1,7 +1,7 @@
 ---
 title: Router
 description: "Basic concepts for navigation and routing in ReScript & React"
-canonical: "/docs/react/latest/router"
+canonical: "/pt-BR/docs/react/latest/router"
 ---
 
 # Router
@@ -74,7 +74,7 @@ Let's start with a first example to see how a ReScript React Router looks like:
 @react.component
 let make = () => {
   let url = RescriptReactRouter.useUrl()
-  
+
   switch url.path {
     | list{"user", id} => <User id />
     | list{} => <Home/>
@@ -102,7 +102,7 @@ function App(Props) {
                   id: match$1.hd
                 });
     }
-    
+
   }
   return React.createElement(NotFound.make, {});
 }
@@ -111,7 +111,7 @@ var make = App;
 
 export {
   make ,
-  
+
 }
 ```
 

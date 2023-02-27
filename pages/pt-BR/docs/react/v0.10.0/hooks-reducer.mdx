@@ -1,7 +1,7 @@
 ---
 title: useReducer Hook
 description: "Details about the useReducer React hook in ReScript"
-canonical: "/docs/react/latest/hooks-reducer"
+canonical: "/pt-BR/docs/react/latest/hooks-reducer"
 ---
 
 # useReducer
@@ -26,7 +26,7 @@ var match = React.useReducer(reducer, initialState);
 
 </CodeTab>
 
-An alternative to [useState](./hooks-state). Accepts a reducer of type `(state, action) => newState`, and returns the current `state` paired with a `dispatch` function `(action) => unit`. 
+An alternative to [useState](./hooks-state). Accepts a reducer of type `(state, action) => newState`, and returns the current `state` paired with a `dispatch` function `(action) => unit`.
 
 `React.useReducer` is usually preferable to `useState` when you have complex state logic that involves multiple sub-values or when the next state depends on the previous one. `useReducer` also lets you optimize performance for components that trigger deep updates because you can pass dispatch down instead of callbacks.
 
@@ -213,7 +213,7 @@ function reducer(state, action) {
                 todos: todos$2,
                 nextId: state.nextId
               };
-    
+
   }
 }
 

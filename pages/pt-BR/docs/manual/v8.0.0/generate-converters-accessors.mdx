@@ -1,7 +1,7 @@
 ---
 title: "Generate Converters & Helpers"
 description: "All about the @bs.deriving decorator, and how to generate code from types"
-canonical: "/docs/manual/latest/generate-converters-accessors"
+canonical: "/pt-BR/docs/manual/latest/generate-converters-accessors"
 ---
 
 # Generate Converters & Helpers
@@ -308,9 +308,9 @@ type fruit =
 
 ```ocaml
 type fruit =
-  | Apple 
-  | Orange 
-  | Kiwi 
+  | Apple
+  | Orange
+  | Kiwi
   | Watermelon [@@bs.deriving jsConverter]
 ```
 
@@ -362,7 +362,7 @@ switch (fruitFromJs(100)) {
 
 ```ocaml
 type fruit =
-  | Apple 
+  | Apple
   | Orange [@bs.as 10]
   | Kiwi [@bs.as 100]
   | Watermelon [@@bs.deriving jsConverter]
@@ -394,7 +394,7 @@ type fruit =
 
 ```ocaml
 type fruit =
-  | Apple 
+  | Apple
   | Kiwi [@bs.as 100]
   | Watermelon [@@bs.deriving { jsConverter = newType }]
 ```
@@ -442,7 +442,7 @@ let error = fruitFromJs(100); /* nope, can't take a random int */
 
 ```ocaml
 type fruit =
-  | Apple 
+  | Apple
   | Kiwi [@bs.as 100]
   | Watermelon [@@bs.deriving { jsConverter = newType }]
 
@@ -480,7 +480,7 @@ let kiwiString = fruitToJs(`Kiwi); /* "miniCoconut" */
 
 ```ocaml
 type fruit = [
-  | `Apple 
+  | `Apple
   | `Kiwi [@bs.as "miniCoconut"]
   | `Watermelon
 ] [@@bs.deriving jsConverter]
@@ -495,8 +495,8 @@ You can also use `[@bs.deriving {jsConverter: newType}]` to generate abstract ty
 
 ## Convert Record Type to Abstract Record
 
-> **Note**: For ReScript >= v7, we recommend using [plain records to compile to JS objects](bind-to-js-object#bind-to-record-like-js-objects). 
-> This feature might still be useful for certain scenarios, but the ergonomics might be worse 
+> **Note**: For ReScript >= v7, we recommend using [plain records to compile to JS objects](bind-to-js-object#bind-to-record-like-js-objects).
+> This feature might still be useful for certain scenarios, but the ergonomics might be worse
 
 Use `[@bs.deriving abstract]` on a record type to expand the type into a creation, and a set of getter / setter functions for fields and methods.
 
@@ -902,7 +902,7 @@ let cat = Cat.t(~name="Snowball", ~isLazy=true);
 /* We can use each nameGet function separately now */
 let shoutPersonName = Person.(person->nameGet->Js.String.toUpperCase);
 
-/* Note how we use a local open Cat.([some expression]) to 
+/* Note how we use a local open Cat.([some expression]) to
    get access to Cat's nameGet function */
 let whisperCatName = Cat.(cat->nameGet->Js.String.toLowerCase);
 ```

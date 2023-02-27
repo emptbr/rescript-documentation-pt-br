@@ -1,7 +1,7 @@
 ---
 title: Elements & JSX
 description: "Basic concepts for React elements and how to use them in JSX"
-canonical: "/docs/react/latest/elements-and-jsx"
+canonical: "/pt-BR/docs/react/latest/elements-and-jsx"
 ---
 
 # Elements & JSX
@@ -12,7 +12,7 @@ Elements are the smallest building blocks of React apps. This page will explain 
 
 </Intro>
 
-> **Note:** This page assumes your `bsconfig.json` to be set to `"reason": { "react-jsx": 3 }`, otherwise your JSX will not be transformed to its React specific form. 
+> **Note:** This page assumes your `bsconfig.json` to be set to `"reason": { "react-jsx": 3 }`, otherwise your JSX will not be transformed to its React specific form.
 
 ## Element Basics
 
@@ -194,7 +194,7 @@ The function above requires the `ReactDOM.domProps` constructor function, so ReS
 
 **Note:** This is an escape hatch feature and will only be useful for interoping with existing JS code / libraries.
 
-Sometimes it's required to clone an existing element to set, overwrite or add prop values to a new instance, or if you want to set invalid prop names such as `data-name`. You can use `React.cloneElement` for that: 
+Sometimes it's required to clone an existing element to set, overwrite or add prop values to a new instance, or if you want to set invalid prop names such as `data-name`. You can use `React.cloneElement` for that:
 
 <CodeTab labels={["ReScript", "JS Output"]}>
 

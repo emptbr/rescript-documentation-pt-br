@@ -1,7 +1,7 @@
 ---
 title: "Async / Await"
 description: "Async / await for asynchronous operations"
-canonical: "/docs/manual/latest/async-await"
+canonical: "/pt-BR/docs/manual/latest/async-await"
 ---
 
 <!-- This prelude is used in many different followup examples, so we use it to shorten the noise of the example code. -->
@@ -22,7 +22,7 @@ canonical: "/docs/manual/latest/async-await"
 
 ReScript comes with `async` / `await` support to make asynchronous, `Promise` based code easier to read and write. This feature is very similar to its JS equivalent, so if you are already familiar with JS' `async` / `await`, you will feel right at home.
 
-## How it looks 
+## How it looks
 
 Let's start with a quick example to show-case the syntax:
 
@@ -170,7 +170,7 @@ let authenticate = async () => {
 let checkAuth = async () => {
   switch await authenticate() {
   | _ => Js.log("ok")
-  | exception Js.Exn.Error(e) => 
+  | exception Js.Exn.Error(e) =>
     switch Js.Exn.message(e) {
     | Some(msg) => Js.log("JS error thrown: " ++ msg)
     | None => Js.log("Some other exception has been thrown")

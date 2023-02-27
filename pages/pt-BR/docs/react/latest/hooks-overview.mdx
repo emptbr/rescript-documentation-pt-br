@@ -1,7 +1,7 @@
 ---
 title: Hooks & State Management Overview
 description: "Overview state management and hooks in ReScript and React"
-canonical: "/docs/react/latest/hooks-overview"
+canonical: "/pt-BR/docs/react/latest/hooks-overview"
 ---
 
 # Hooks Overview
@@ -16,13 +16,13 @@ Hooks are an essential mechanism to introduce and manage state and effects in Re
 
 In the previous chapters we learned how React components are just a simple function representing UI based on specific prop values. For an application to be useful we still need a way to manipulate those props interactively either via user input or via requests loading in data from a server.
 
-That's where Hooks come in. A Hook is a function that allows us to introduce component state and trigger side-effects for different tasks, such as HTTP requests, direct HTML DOM access, querying window sizes, etc. 
+That's where Hooks come in. A Hook is a function that allows us to introduce component state and trigger side-effects for different tasks, such as HTTP requests, direct HTML DOM access, querying window sizes, etc.
 
 In other words: **It allows us to "hook into" React features.**
 
 ### Example: The `useState` Hook
 
-Just for a quick look, here is an example of a `Counter` component that allows a user to click a button and increment an `count` value that will immediately be rendered on each button click: 
+Just for a quick look, here is an example of a `Counter` component that allows a user to click a button and increment an `count` value that will immediately be rendered on each button click:
 
 <CodeTab labels={["ReScript", "JS Output"]}>
 
@@ -65,7 +65,7 @@ function Counter(Props) {
 </CodeTab>
 
 
-Here we are using the `React.useState` Hook. We call it inside a component function to add some local state to it. React will preserve this state between re-renders. `React.useState` returns a tuple: the current state value (`count`) and a function that lets you update it (`setCount`). You can call this function from an event handler or pass it down to other components to call the function. 
+Here we are using the `React.useState` Hook. We call it inside a component function to add some local state to it. React will preserve this state between re-renders. `React.useState` returns a tuple: the current state value (`count`) and a function that lets you update it (`setCount`). You can call this function from an event handler or pass it down to other components to call the function.
 
 The only argument to `React.useState` is a function that returns the initial state (`_ => 0`). In the example above, it is 0 because our counter starts from zero. Note that your state can be any type you want and `ReScript` will make sure to infer the types for you (only make sure to return an initial state that matches your type). The initial state argument is only used during the first render.
 

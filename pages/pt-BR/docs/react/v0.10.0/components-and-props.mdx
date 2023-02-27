@@ -1,20 +1,20 @@
 ---
 title: Components and Props
 description: "Basic concepts for components and props in ReScript & React"
-canonical: "/docs/react/latest/components-and-props"
+canonical: "/pt-BR/docs/react/latest/components-and-props"
 ---
 
 # Components and Props
 
 <Intro>
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. 
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components.
 
 </Intro>
 
 ## What is a Component?
 
-A React component is a function describing a UI element that receives a `props` object as a parameter (data describing the dynamic parts of the UI) and returns a `React.element`. 
+A React component is a function describing a UI element that receives a `props` object as a parameter (data describing the dynamic parts of the UI) and returns a `React.element`.
 
 The nice thing about this concept is that you can solely focus on the input and output. The component function receives some data and returns some opaque `React.element` that is managed by the React framework to render your UI.
 
@@ -115,7 +115,7 @@ function Greeting(Props) {
 
 </CodeTab>
 
-**Note:** The `@react.component` attribute implicitly adds the last `()` parameter to our `make` function for us (no need to do it ourselves). 
+**Note:** The `@react.component` attribute implicitly adds the last `()` parameter to our `make` function for us (no need to do it ourselves).
 
 In JSX, you can apply optional props with some special syntax:
 
@@ -150,7 +150,7 @@ Check out the corresponding [Arrays and Keys](./arrays-and-keys) and [Forwarding
 
 ### Handling Invalid Prop Names (e.g. keywords)
 
-Prop names like `type` (as in `<input type="text" />`) aren't syntactically valid; `type` is a reserved keyword in ReScript. Use `<input type_="text" />` instead. 
+Prop names like `type` (as in `<input type="text" />`) aren't syntactically valid; `type` is a reserved keyword in ReScript. Use `<input type_="text" />` instead.
 
 For `aria-*` use camelCasing, e.g., `ariaLabel`. For DOM components, we'll translate it to `aria-label` under the hood.
 
@@ -273,7 +273,7 @@ The best way to approach this kind of issue is by using props instead of childre
 
 ## Props & Type Inference
 
-The ReScript type system is really good at inferring the prop types just by looking at its prop usage. 
+The ReScript type system is really good at inferring the prop types just by looking at its prop usage.
 
 For simple cases, well-scoped usage, or experimentation, it's still fine to omit type annotations:
 
@@ -342,7 +342,7 @@ module Link = {
     ~children: React.element,
     unit) => props = ""
 
-  let make = (props: props) => { 
+  let make = (props: props) => {
     <a href={props["href"]}>
      {props["children"]}
     </a>
@@ -371,7 +371,7 @@ More details on the `@react.component` decorator and its generated interface can
 
 ## Submodule Components
 
-We can also represent React components as submodules, which makes it very convenient to build more complex UI without the need to create multiple files for each composite component (that's probably only used by the parent component anyways): 
+We can also represent React components as submodules, which makes it very convenient to build more complex UI without the need to create multiple files for each composite component (that's probably only used by the parent component anyways):
 
 ```res
 // src/Button.res
