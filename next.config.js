@@ -1,5 +1,5 @@
-const { ProvidePlugin } = require('webpack');
-const { ESBuildMinifyPlugin } = require('esbuild-loader');
+const { ProvidePlugin } = require("webpack");
+const { ESBuildMinifyPlugin } = require("esbuild-loader");
 
 const bsconfig = require("./bsconfig.json");
 const path = require("path");
@@ -16,22 +16,27 @@ const withMdx = require("./plugins/next-mdx")({
   },
 });
 
-
 // esbuild-loader specific features
 // See: https://github.com/privatenumber/esbuild-loader-examples/blob/master/examples/next/next.config.js
 function useEsbuildMinify(config, options) {
-  const terserIndex = config.optimization.minimizer.findIndex(minimizer => (minimizer.constructor.name === 'TerserPlugin'));
+  const terserIndex = config.optimization.minimizer.findIndex(
+    (minimizer) => minimizer.constructor.name === "TerserPlugin"
+  );
   if (terserIndex > -1) {
     config.optimization.minimizer.splice(
       terserIndex,
       1,
-      new ESBuildMinifyPlugin(options),
+      new ESBuildMinifyPlugin(options)
     );
   }
 }
 
 const isWebpack5 = true;
 const config = {
+  i18n: {
+    locales: ["en", "pt-BR"],
+    defaultLocale: "en",
+  },
   target: "serverless",
   pageExtensions: ["jsx", "js", "bs.js", "mdx", "mjs"],
   env: {
@@ -55,12 +60,12 @@ const config = {
         test: /\.m?js$/,
         // v-- currently using an experimental setting with esbuild-loader
         //use: options.defaultLoaders.babel,
-        use: [{loader: 'esbuild-loader', options: { loader: 'jsx'}}],
+        use: [{ loader: "esbuild-loader", options: { loader: "jsx" } }],
         exclude: /node_modules/,
         type: "javascript/auto",
         resolve: {
           fullySpecified: false,
-        }
+        },
       });
       config.plugins.push(new ProvidePlugin({ React: "react" }));
     }
